@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+const PORT = process.env.MONGODB_URL || 3000;
 
 
 // const Person = require('./models/person');
@@ -129,7 +131,9 @@ const personRoutes = require('./routes/personRoutes');
 // use the routers 
 app.use('/person', personRoutes);
 
-app.listen(3000, () => {
+
+
+app.listen(PORT, () => {
   console.log('listen on port 3000');
 });
 

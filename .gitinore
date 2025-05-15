@@ -1,3 +1,4 @@
 # Ingnore node_modules deirectory
 node_modules
+.env
 # other entries...
